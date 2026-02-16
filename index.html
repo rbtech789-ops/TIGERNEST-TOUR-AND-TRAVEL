@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TigerNest Tour and Travel | Bhutan Experts in Jaigaon</title>
+    <meta name="description" content="Premier travel agency in Jaigaon offering exclusive Bhutan tour packages, hotel bookings, and monastery tours.">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 overflow-x-hidden">
+   
+    <!-- Page Loader -->
+    <div id="page-loader" class="fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-16 w-16 mb-4"></div>
+        <h2 class="text-xl font-serif text-bhutan-dark">Loading Bhutan...</h2>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 group cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="bg-white/10 p-2 rounded-lg backdrop-blur-sm group-hover:bg-bhutan-red transition duration-300">
+                        <i data-lucide="mountain" class="w-8 h-8 text-bhutan-yellow"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-bold tracking-wider leading-none">TigerNest</span>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-bhutan-yellow font-bold">Tour & Travel</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="nav-link hover:text-bhutan-yellow transition duration-300 relative group py-2">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-bhutan-yellow transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#destinations" class="nav-link hover:text-bhutan-yellow transition duration-300 relative group py-2">
+                        Monasteries
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-bhutan-yellow transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#hotels" class="nav-link hover:text-bhutan-yellow transition duration-300 relative group py-2">
+                        Hotels
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-bhutan-yellow transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#gallery" class="nav-link hover:text-bhutan-yellow transition duration-300 relative group py-2">
+                        Gallery
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-bhutan-yellow transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="bg-bhutan-red hover:bg-red-700 text-white px-6 py-2.5 rounded-full font-bold transition transform hover:scale-105 shadow-lg flex items-center gap-2">
+                        <i data-lucide="calendar-check" class="w-4 h-4"></i> Book Now
+                    </a>
+                </div>
+
+                <!-- Hamburger Button -->
+                <button id="menu-btn" class="lg:hidden p-2 text-white focus:outline-none z-50 relative">
+                    <div class="w-8 h-8 flex flex-col justify-center gap-1.5 hamburger-icon">
+                        <span class="block w-full h-0.5 bg-current transition-transform duration-300 origin-center"></span>
+                        <span class="block w-full h-0.5 bg-current transition-opacity duration-300"></span>
+                        <span class="block w-full h-0.5 bg-current transition-transform duration-300 origin-center"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-bhutan-dark/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8 lg:hidden">
+            <a href="#home" class="text-2xl text-white font-serif hover:text-bhutan-yellow mobile-link">Home</a>
+            <a href="#destinations" class="text-2xl text-white font-serif hover:text-bhutan-yellow mobile-link">Monasteries</a>
+            <a href="#hotels" class="text-2xl text-white font-serif hover:text-bhutan-yellow mobile-link">Hotels</a>
+            <a href="#gallery" class="text-2xl text-white font-serif hover:text-bhutan-yellow mobile-link">Gallery</a>
+            <a href="#contact" class="px-8 py-3 bg-bhutan-red text-white rounded-full font-bold mobile-link">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Slider (Simulated with 1 image for performance, but structure allows expansion) -->
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        <div class="absolute inset-0 z-0 scale-110 animate-[kenburns_20s_infinite_alternate]">
+            <img src="https://images.unsplash.com/photo-1572538727876-23d8b8691b8f?q=80&w=1920&auto=format&fit=crop" alt="Tiger Nest Monastery" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto text-white">
+            <div class="inline-block mb-4 px-4 py-1 border border-bhutan-yellow/50 rounded-full bg-black/20 backdrop-blur-sm animate-[fadeInDown_1s_ease-out]">
+                <span class="text-bhutan-yellow uppercase tracking-widest text-sm font-bold">Trusted Agency in Jaigaon</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-6 text-shadow animate-[fadeInUp_1s_ease-out_0.3s_both]">
+                Spirit of <span class="text-bhutan-yellow">Bhutan</span>
+            </h1>
+            <p class="text-lg md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200 font-light animate-[fadeInUp_1s_ease-out_0.6s_both]">
+                Experience the magic of the Himalayas with <strong>TigerNest Tour and Travel</strong>. From visa permits to luxury stays, we handle it all.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-[fadeInUp_1s_ease-out_0.9s_both]">
+                <a href="#destinations" class="px-8 py-4 bg-bhutan-red text-white font-bold rounded-lg hover:bg-red-700 transition shadow-xl transform hover:-translate-y-1">
+                    Explore Packages
+                </a>
+                <a href="https://wa.me/919382344882" class="px-8 py-4 bg-whatsapp text-white font-bold rounded-lg hover:bg-green-700 transition shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i> WhatsApp Us
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-white/70"></i>
+        </div>
+    </section>
+
+    <!-- Services Banner -->
+    <div class="bg-bhutan-dark py-12 relative z-30 -mt-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white text-center">
+                <div class="p-6 border border-white/10 rounded-xl hover:bg-white/5 transition duration-300">
+                    <div class="w-12 h-12 bg-bhutan-red/20 rounded-full flex items-center justify-center mx-auto mb-4 text-bhutan-red">
+                        <i data-lucide="file-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mb-2">Permit Assistance</h3>
+                    <p class="text-gray-400 text-sm">We handle all entry permits from the Jaigaon-Phuentsholing border seamlessly.</p>
+                </div>
+                <div class="p-6 border border-white/10 rounded-xl hover:bg-white/5 transition duration-300">
+                    <div class="w-12 h-12 bg-bhutan-yellow/20 rounded-full flex items-center justify-center mx-auto mb-4 text-bhutan-yellow">
+                        <i data-lucide="car" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mb-2">Luxury Transport</h3>
+                    <p class="text-gray-400 text-sm">Comfortable SUVs (Toyota Coaster, Hiace, Prado) for mountain roads.</p>
+                </div>
+                <div class="p-6 border border-white/10 rounded-xl hover:bg-white/5 transition duration-300">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-400">
+                        <i data-lucide="star" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mb-2">Custom Itineraries</h3>
+                    <p class="text-gray-400 text-sm">Tailor-made plans for families, honeymooners, and adventure seekers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Monasteries Carousel -->
+    <section id="destinations" class="py-20 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-bhutan-red font-bold uppercase tracking-wider text-sm">Sacred Sites</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-bhutan-dark mt-2">Famous Monasteries</h2>
+                <div class="w-24 h-1 bg-bhutan-yellow mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Custom Carousel Container -->
+            <div class="relative group">
+                <div class="overflow-hidden rounded-2xl shadow-2xl aspect-[16/9] md:aspect-[21/9] bg-gray-100 relative" id="carousel-container">
+                    <div class="carousel-track h-full" id="carousel-track">
+                        <!-- Dynamic Content Inserted via JS -->
+                    </div>
+                    
+                    <!-- Text Overlay Gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent pointer-events-none"></div>
+                </div>
+
+                <!-- Controls -->
+                <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md p-3 rounded-full text-white transition transform hover:scale-110 z-10">
+                    <i data-lucide="chevron-left" class="w-8 h-8"></i>
+                </button>
+                <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-md p-3 rounded-full text-white transition transform hover:scale-110 z-10">
+                    <i data-lucide="chevron-right" class="w-8 h-8"></i>
+                </button>
+
+                <!-- Caption Container -->
+                <div class="absolute bottom-8 left-8 right-8 z-10 text-white pointer-events-none">
+                    <h3 id="slide-title" class="text-3xl md:text-5xl font-serif font-bold mb-2 transition-all duration-300 transform translate-y-0 opacity-100">Tiger's Nest</h3>
+                    <p id="slide-desc" class="text-lg md:text-xl text-gray-200 max-w-2xl transition-all duration-300 delay-100">The most sacred site in Bhutan, clinging to a cliff 900 meters above Paro valley.</p>
+                </div>
+
+                <!-- Dots -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10" id="carousel-indicators">
+                    <!-- Dots injected via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filterable Hotels Section -->
+    <section id="hotels" class="py-20 bg-bhutan-light/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <span class="text-bhutan-red font-bold uppercase tracking-wider text-sm">Stay in Comfort</span>
+                    <h2 class="text-4xl font-serif font-bold text-bhutan-dark mt-2">Premium Hotels</h2>
+                </div>
+                
+                <!-- Filter Buttons -->
+                <div class="flex gap-2 mt-4 md:mt-0 bg-white p-1 rounded-lg shadow-sm">
+                    <button class="filter-btn active px-4 py-2 rounded-md text-sm font-bold transition duration-300 bg-bhutan-dark text-white" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 rounded-md text-sm font-bold text-gray-600 hover:bg-gray-100 transition duration-300" data-filter="luxury">Luxury</button>
+                    <button class="filter-btn px-4 py-2 rounded-md text-sm font-bold text-gray-600 hover:bg-gray-100 transition duration-300" data-filter="standard">Standard</button>
+                    <button class="filter-btn px-4 py-2 rounded-md text-sm font-bold text-gray-600 hover:bg-gray-100 transition duration-300" data-filter="budget">Budget</button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="hotel-grid">
+                <!-- Items injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Lightbox) -->
+    <section id="gallery" class="py-20 bg-bhutan-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-serif font-bold">Bhutan Through Our Lens</h2>
+                <p class="text-gray-400 mt-2">Click any image to view details</p>
+            </div>
+            
+            <div class="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+                <!-- Gallery Item 1 -->
+                <div class="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-lg" onclick="openLightbox(this)">
+                    <img src="images/wheels.jpg" class="w-full transition duration-500 group-hover:scale-110" alt="Prayer Wheels">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-lg" onclick="openLightbox(this)">
+                    <img src="images/punakhadzong.jpg" class="w-full transition duration-500 group-hover:scale-110" alt="Punakha Dzong">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                    </div>
+                </div>
+                 <!-- Gallery Item 3 -->
+                 <div class="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-lg" onclick="openLightbox(this)">
+                    <img src="https://images.unsplash.com/photo-1580974852861-c381510bc98a?q=80&w=600&auto=format&fit=crop" class="w-full transition duration-500 group-hover:scale-110" alt="Monk">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-lg" onclick="openLightbox(this)">
+                    <img src="images/thimphucity.jpg" class="w-full transition duration-500 group-hover:scale-110" alt="Thimphu City">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-lg" onclick="openLightbox(this)">
+                    <img src="images/buddhapoint.jpg" class="w-full transition duration-500 group-hover:scale-110" alt="Buddha Point">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                    </div>
+                </div>
+                <!-- Gallery Item 6 -->
+                <div class="break-inside-avoid relative group cursor-pointer overflow-hidden rounded-lg" onclick="openLightbox(this)">
+                    <img src="images/festival.jpg" class="w-full transition duration-500 group-hover:scale-110" alt="Festival Dance">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <i data-lucide="zoom-in" class="text-white w-8 h-8"></i>
+                        <a href="https://www.andbeyond.com/experiences/asia/bhutan/punakha/punakha-dzong/" alt="Visit Punakha Dzong">punakha dzong</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location -->
+    <section id="contact" class="py-20 bg-white relative">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-bhutan-light/50 hidden lg:block skew-x-12 transform translate-x-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Form -->
+                <div class="bg-white p-8 md:p-10 rounded-2xl shadow-2xl border-t-4 border-bhutan-red">
+                    <h2 class="text-3xl font-serif font-bold mb-2 text-bhutan-dark">Plan Your Trip</h2>
+                    <p class="text-gray-500 mb-8">Fill the form to get a quote directly on WhatsApp.</p>
+                    
+                    <form id="bookingForm" onsubmit="sendToWhatsApp(event)" class="space-y-6">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="text-xs font-bold uppercase text-gray-500 tracking-wider">Name</label>
+                                <input type="text" id="name" required class="w-full border-b-2 border-gray-200 py-3 focus:outline-none focus:border-bhutan-red transition bg-transparent" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label class="text-xs font-bold uppercase text-gray-500 tracking-wider">Phone</label>
+                                <input type="tel" id="phone" required class="w-full border-b-2 border-gray-200 py-3 focus:outline-none focus:border-bhutan-red transition bg-transparent" placeholder="+91 0000000000">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold uppercase text-gray-500 tracking-wider">Email</label>
+                            <input type="email" id="email" class="w-full border-b-2 border-gray-200 py-3 focus:outline-none focus:border-bhutan-red transition bg-transparent" placeholder="you@email.com">
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold uppercase text-gray-500 tracking-wider">Package Type</label>
+                            <select id="package" class="w-full border-b-2 border-gray-200 py-3 focus:outline-none focus:border-bhutan-red transition bg-transparent">
+                                <option>Family Tour (5 Days)</option>
+                                <option>Honeymoon Special</option>
+                                <option>Adventure & Trekking</option>
+                                <option>Spiritual / Monastery Tour</option>
+                                <option>Custom Itinerary</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="text-xs font-bold uppercase text-gray-500 tracking-wider">Message</label>
+                            <textarea id="message" rows="3" class="w-full border-b-2 border-gray-200 py-3 focus:outline-none focus:border-bhutan-red transition bg-transparent resize-none" placeholder="Travel dates, number of people..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-whatsapp text-white font-bold py-4 rounded-lg hover:bg-green-700 transition flex items-center justify-center gap-2 group">
+                            Send via WhatsApp 
+                            <i data-lucide="send" class="w-5 h-5 group-hover:translate-x-1 transition"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info -->
+                <div class="flex flex-col justify-center space-y-10">
+                    <div>
+                        <h2 class="text-4xl font-serif font-bold text-bhutan-dark mb-6">Visit Our Office</h2>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-bhutan-red/10 p-3 rounded-full text-bhutan-red">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">TigerNest Tour and Travel</h4>
+                                <p class="text-gray-600">Subashpally, Jaigaon<br>Alipurduar, West Bengal - 736182</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-bhutan-red/10 p-3 rounded-full text-bhutan-red">
+                            <i data-lucide="phone-call" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Contact Support</h4>
+                            <p class="text-gray-600">+91 9382344882/9832494655</p>
+                            <p class="text-gray-600">tigernesttourandtravel@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-bhutan-dark to-black p-8 rounded-2xl text-white shadow-xl relative overflow-hidden">
+                        <i data-lucide="quote" class="absolute top-4 right-4 w-12 h-12 text-white/10"></i>
+                        <p class="italic text-lg mb-4">"We don't just book tickets; we craft memories. From the moment you arrive at Bagdogra/Hasimara to your drop-off, you are family."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-bhutan-yellow rounded-full flex items-center justify-center text-bhutan-dark font-bold">TN</div>
+                            <span class="font-bold">CEO, TigerNest Travels</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <i data-lucide="mountain" class="text-bhutan-yellow w-6 h-6"></i>
+                <span class="text-xl font-serif text-white font-bold">TigerNest</span>
+            </div>
+            <p class="text-sm mb-8">© 2026 Tigernest Tour and Travel, Jaigaon, West Bengal. All rights reserved.</P>
+            <div class="flex justify-center gap-6">
+                <a href="#" class="hover:text-white transition"><i data-lucide="facebook"></i></a>
+                <a href="#" class="hover:text-white transition"><i data-lucide="instagram"></i></a>
+                <a href="#" class="hover:text-white transition"><i data-lucide="twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4 lightbox">
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-bhutan-red transition">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightbox-img" src="" class="max-h-[90vh] max-w-[95vw] rounded shadow-2xl border border-white/20">
+        <p id="lightbox-caption" class="absolute bottom-8 text-white bg-black/50 px-4 py-2 rounded backdrop-blur-sm"></p>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
